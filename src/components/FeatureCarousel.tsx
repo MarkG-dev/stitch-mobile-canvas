@@ -53,8 +53,9 @@ const FeatureCarousel = () => {
             <CarouselContent>
               {features.map((feature, index) => (
                 <CarouselItem key={index} className="md:basis-full">
-                  <div className={cn("relative neon-border overflow-hidden", current === index ? "bg-neon/5" : "")}>
-                    <div className="relative aspect-[16/9] w-full">
+                  <div className={cn("relative neon-border overflow-hidden", current === index ? "bg-neon/5" : "")} 
+                    style={{ width: '350px', height: '390px' }}>
+                    <div className="relative w-full h-full">
                       <img 
                         src={feature.image} 
                         alt={feature.title} 
