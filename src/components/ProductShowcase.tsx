@@ -50,7 +50,7 @@ const ProductShowcase = () => {
           </div>
         </div>
         
-        <div className="relative w-full">
+        <div className="\nCode\nLanguage\nCSS\nLayout\n\n1\n2\n3\n4\n5\n6\n7\n8\ndisplay: flex;\nwidth: 210px;\npadding: 17px 10px;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 10px;\nflex-shrink: 0;">
           <div className="flex overflow-x-auto pb-4 gap-4 no-scrollbar">
             {shirts.map((shirt, index) => <div key={index} className="neon-border flex-shrink-0 w-[280px] p-4 flex flex-col">
                 <div className="mb-4 flex justify-center">
