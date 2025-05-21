@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import TshirtDisplay from "@/components/TshirtDisplay";
 import ProcessSteps from "@/components/ProcessSteps";
 import FeatureCarousel from "@/components/FeatureCarousel";
+import ProductShowcase from "@/components/ProductShowcase";
 import { Container } from "@/components/ui/container";
 
 const Index = () => {
@@ -26,6 +27,7 @@ const Index = () => {
       
       <ProcessSteps />
       <FeatureCarousel />
+      <ProductShowcase />
     </div>
   );
 };
