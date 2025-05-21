@@ -13,62 +13,81 @@ type ShirtProduct = {
 
 const shirts: ShirtProduct[] = [
   {
-    name: "Classic Crew Neck",
-    price: "$24.99",
-    colors: ["Black", "White", "Gray"],
+    name: "NAME",
+    price: "$22-$38",
+    colors: ["WHITE", "BLACK"],
     sizes: ["S", "M", "L", "XL"],
     image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
   },
   {
-    name: "Premium V-Neck",
-    price: "$29.99",
-    colors: ["Navy", "Burgundy", "Forest"],
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    name: "NAME",
+    price: "$22-$38",
+    colors: ["WHITE", "BLACK"],
+    sizes: ["S", "M", "L", "XL"],
     image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
   },
   {
-    name: "Limited Edition Print",
-    price: "$34.99",
-    colors: ["Black", "White"],
-    sizes: ["M", "L", "XL"],
+    name: "NAME",
+    price: "$22-$38",
+    colors: ["WHITE", "BLACK"],
+    sizes: ["S", "M", "L", "XL"],
+    image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
+  },
+  {
+    name: "NAME",
+    price: "$22-$38",
+    colors: ["WHITE", "BLACK"],
+    sizes: ["S", "M", "L", "XL"],
     image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
   }
 ];
 
 const ProductShowcase = () => {
   return (
-    <div className="py-10">
-      <Container>
-        <h2 className="text-3xl font-serif text-neon text-center mb-8">Our Shirts</h2>
+    <div className="py-10 bg-black">
+      <Container className="mb-6">
+        <div className="max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-serif text-white mb-1">
+            THE TEES THE BIG BRANDS USE
+          </h2>
+          <h3 className="text-xl md:text-2xl font-serif text-white mb-4">
+            (BUT BUILT FOR YOU)
+          </h3>
+        </div>
         
-        <div className="flex justify-center">
-          <div 
-            className="flex flex-col items-start gap-5 w-full max-w-[430px]"
-          >
+        <div className="flex justify-between items-center mb-6">
+          <div className="flex-1"></div>
+          <div className="neon-border px-6 py-2">
+            <span className="text-neon font-bold">PRODUCT</span>
+          </div>
+        </div>
+        
+        <div className="relative w-full">
+          <div className="flex overflow-x-auto pb-4 gap-4 no-scrollbar">
             {shirts.map((shirt, index) => (
               <div 
                 key={index} 
-                className="neon-border w-full p-4 flex flex-col"
+                className="neon-border flex-shrink-0 w-[280px] p-4 flex flex-col"
               >
-                <div className="flex gap-4 mb-3">
-                  <div className="w-24 h-24 overflow-hidden">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-36 h-40 overflow-hidden">
                     <img 
                       src={shirt.image} 
                       alt={shirt.name} 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="flex-1">
-                    <div className="text-neon font-bold">{shirt.price}</div>
-                    <div className="text-xs text-white/80 mt-1">
-                      <span className="font-semibold">Colors:</span> {shirt.colors.join(", ")}
-                    </div>
-                    <div className="text-xs text-white/80 mt-1">
-                      <span className="font-semibold">Sizes:</span> {shirt.sizes.join(", ")}
-                    </div>
+                </div>
+                <div className="mb-4">
+                  <div className="text-white font-bold">{shirt.price}</div>
+                  <div className="text-sm text-white/80 uppercase">
+                    {shirt.colors.join(" / ")}
+                  </div>
+                  <div className="text-sm text-white/80 mt-1">
+                    {shirt.sizes.join(" ")}
                   </div>
                 </div>
-                <div className="text-sm font-medium">{shirt.name}</div>
+                <div className="text-xl text-white font-bold">{shirt.name}</div>
               </div>
             ))}
           </div>
