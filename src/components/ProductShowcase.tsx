@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
@@ -40,7 +41,9 @@ const ProductShowcase = () => {
           <h2 className="md:text-3xl font-serif text-white mb-1 text-xs">
             THE TEES THE BIG BRANDS USE
           </h2>
-          
+          <p className="text-white/70 text-sm">
+            (BUT BUILT FOR YOU)
+          </p>
         </div>
         
         <div className="flex justify-between items-center mb-6">
@@ -50,7 +53,7 @@ const ProductShowcase = () => {
           </div>
         </div>
         
-        <div className="\nCode\nLanguage\nCSS\nLayout\n\n1\n2\n3\n4\n5\n6\n7\n8\ndisplay: flex;\nwidth: 210px;\npadding: 17px 10px;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 10px;\nflex-shrink: 0;">
+        <div className="flex flex-col items-start gap-5 w-[430px]">
           <div className="flex overflow-x-auto pb-4 gap-4 no-scrollbar">
             {shirts.map((shirt, index) => <div key={index} className="neon-border flex-shrink-0 w-[280px] p-4 flex flex-col">
                 <div className="mb-4 flex justify-center">
