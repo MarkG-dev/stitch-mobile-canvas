@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
-import { useMediaQuery } from "@/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 import { Circle, CircleDot } from "lucide-react";
@@ -32,7 +32,7 @@ const features = [
 ];
 
 const FeatureCarousel = () => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useIsMobile();
   const [api, setApi] = React.useState<any>(null);
   const [current, setCurrent] = React.useState(0);
 
