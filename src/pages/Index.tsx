@@ -3,7 +3,6 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import TshirtDisplay from "@/components/TshirtDisplay";
 import ProcessSteps from "@/components/ProcessSteps";
-import ImageCarousel from "@/components/ImageCarousel";
 import { Container } from "@/components/ui/container";
 
 const Index = () => {
@@ -25,13 +24,6 @@ const Index = () => {
       </main>
       
       <ProcessSteps />
-      
-      <Container className="mt-12 mb-16">
-        <h2 className="text-3xl md:text-4xl text-neon font-serif leading-tight text-center mb-8">
-          Our Designs
-        </h2>
-        <ImageCarousel />
-      </Container>
     </div>
   );
 };
