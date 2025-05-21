@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import TshirtDisplay from "@/components/TshirtDisplay";
 import ProcessSteps from "@/components/ProcessSteps";
+import ImageCarousel from "@/components/ImageCarousel";
 import { Container } from "@/components/ui/container";
 
 const Index = () => {
@@ -20,6 +21,13 @@ const Index = () => {
           <p className="text-2xl md:text-3xl text-neon font-serif text-center leading-tight">
             The custom tees you always wanted.
           </p>
+        </Container>
+        
+        <Container>
+          <h2 className="text-3xl md:text-4xl text-neon font-serif leading-tight text-center mb-8">
+            Our Designs
+          </h2>
+          <ImageCarousel />
         </Container>
       </main>
       
