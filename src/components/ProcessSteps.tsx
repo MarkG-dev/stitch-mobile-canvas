@@ -10,15 +10,16 @@ const steps = [
 
 const ProcessSteps = () => {
   return (
-    <div className="fixed bottom-10 left-0 right-0">
+    <div className="mb-6">
       <Container>
         <div className="flex justify-between gap-2">
           {steps.map((step) => (
             <button 
               key={step.number}
-              className="neon-border flex-1 py-3 text-center text-neon"
+              className="neon-border flex-1 py-2 text-center"
             >
-              {step.number}
+              <div className="text-neon text-lg">{step.number}</div>
+              <div className="text-neon text-xs mt-1">{step.label}</div>
             </button>
           ))}
         </div>

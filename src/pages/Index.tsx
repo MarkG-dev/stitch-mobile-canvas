@@ -13,7 +13,7 @@ const Index = () => {
       <main className="flex-1 flex flex-col">
         <TshirtDisplay />
         
-        <Container className="mt-0 mb-24">
+        <Container className="mt-0 mb-12">
           <h1 className="text-4xl md:text-5xl text-neon font-serif leading-tight text-center mb-2">
             App meets atelier.
           </h1>
