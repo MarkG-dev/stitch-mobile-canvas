@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Container } from "@/components/ui/container";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 
 type ShirtProduct = {
@@ -64,7 +64,7 @@ const ProductShowcase = () => {
         </div>
         
         <div className="w-full">
-          <ScrollArea className="w-full" orientation="horizontal">
+          <ScrollArea className="w-full">
             <div className="flex gap-4 pb-4 min-w-max">
               {shirts.map((shirt, index) => (
                 <div key={index} className="neon-border flex-shrink-0 w-[280px] p-4 flex flex-col">
@@ -86,6 +86,7 @@ const ProductShowcase = () => {
                 </div>
               ))}
             </div>
+            <ScrollBar orientation="horizontal" />
           </ScrollArea>
         </div>
       </Container>
