@@ -1,8 +1,6 @@
-
 import React from "react";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
-
 type ShirtProduct = {
   name: string;
   price: string;
@@ -10,41 +8,33 @@ type ShirtProduct = {
   sizes: string[];
   image: string;
 };
-
-const shirts: ShirtProduct[] = [
-  {
-    name: "NAME",
-    price: "$22-$38",
-    colors: ["WHITE", "BLACK"],
-    sizes: ["S", "M", "L", "XL"],
-    image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
-  },
-  {
-    name: "NAME",
-    price: "$22-$38",
-    colors: ["WHITE", "BLACK"],
-    sizes: ["S", "M", "L", "XL"],
-    image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
-  },
-  {
-    name: "NAME",
-    price: "$22-$38",
-    colors: ["WHITE", "BLACK"],
-    sizes: ["S", "M", "L", "XL"],
-    image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
-  },
-  {
-    name: "NAME",
-    price: "$22-$38",
-    colors: ["WHITE", "BLACK"],
-    sizes: ["S", "M", "L", "XL"],
-    image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
-  }
-];
-
+const shirts: ShirtProduct[] = [{
+  name: "NAME",
+  price: "$22-$38",
+  colors: ["WHITE", "BLACK"],
+  sizes: ["S", "M", "L", "XL"],
+  image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
+}, {
+  name: "NAME",
+  price: "$22-$38",
+  colors: ["WHITE", "BLACK"],
+  sizes: ["S", "M", "L", "XL"],
+  image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
+}, {
+  name: "NAME",
+  price: "$22-$38",
+  colors: ["WHITE", "BLACK"],
+  sizes: ["S", "M", "L", "XL"],
+  image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
+}, {
+  name: "NAME",
+  price: "$22-$38",
+  colors: ["WHITE", "BLACK"],
+  sizes: ["S", "M", "L", "XL"],
+  image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
+}];
 const ProductShowcase = () => {
-  return (
-    <div className="py-10 bg-black">
+  return <div className="py-10 bg-transparent">
       <Container className="mb-6">
         <div className="max-w-3xl">
           <h2 className="text-2xl md:text-3xl font-serif text-white mb-1">
@@ -64,18 +54,10 @@ const ProductShowcase = () => {
         
         <div className="relative w-full">
           <div className="flex overflow-x-auto pb-4 gap-4 no-scrollbar">
-            {shirts.map((shirt, index) => (
-              <div 
-                key={index} 
-                className="neon-border flex-shrink-0 w-[280px] p-4 flex flex-col"
-              >
+            {shirts.map((shirt, index) => <div key={index} className="neon-border flex-shrink-0 w-[280px] p-4 flex flex-col">
                 <div className="mb-4 flex justify-center">
                   <div className="w-36 h-40 overflow-hidden">
-                    <img 
-                      src={shirt.image} 
-                      alt={shirt.name} 
-                      className="w-full h-full object-contain"
-                    />
+                    <img src={shirt.image} alt={shirt.name} className="w-full h-full object-contain" />
                   </div>
                 </div>
                 <div className="mb-4">
@@ -88,13 +70,10 @@ const ProductShowcase = () => {
                   </div>
                 </div>
                 <div className="text-xl text-white font-bold">{shirt.name}</div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </Container>
-    </div>
-  );
+    </div>;
 };
-
 export default ProductShowcase;
