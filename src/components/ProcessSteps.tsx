@@ -10,14 +10,18 @@ const steps = [
 
 const ProcessSteps = () => {
   return (
-    <div className="fixed bottom-20 left-0 right-0">
-      <Container className="grid grid-cols-3 gap-2 border border-neon">
-        {steps.map((step) => (
-          <div key={step.number} className="step-item">
-            <div className="step-number">{step.number}</div>
-            <div className="step-label">{step.label}</div>
-          </div>
-        ))}
+    <div className="fixed bottom-10 left-0 right-0">
+      <Container>
+        <div className="flex justify-between gap-2">
+          {steps.map((step) => (
+            <button 
+              key={step.number}
+              className="neon-border flex-1 py-3 text-center text-neon"
+            >
+              {step.number}
+            </button>
+          ))}
+        </div>
       </Container>
     </div>
   );
