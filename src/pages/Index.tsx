@@ -22,16 +22,16 @@ const Index = () => {
             The custom tees you always wanted.
           </p>
         </Container>
-        
-        <Container>
-          <h2 className="text-3xl md:text-4xl text-neon font-serif leading-tight text-center mb-8">
-            Our Designs
-          </h2>
-          <ImageCarousel />
-        </Container>
       </main>
       
       <ProcessSteps />
+      
+      <Container className="mt-12 mb-16">
+        <h2 className="text-3xl md:text-4xl text-neon font-serif leading-tight text-center mb-8">
+          Our Designs
+        </h2>
+        <ImageCarousel />
+      </Container>
     </div>
   );
 };

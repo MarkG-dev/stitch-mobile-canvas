@@ -1,10 +1,5 @@
 
 import React, { useState, useCallback, useEffect } from "react";
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem,
-} from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import useEmblaCarousel from "embla-carousel-react";
 
