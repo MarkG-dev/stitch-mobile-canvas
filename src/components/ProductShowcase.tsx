@@ -1,7 +1,9 @@
 
 import React from "react";
 import { Container } from "@/components/ui/container";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
+
 type ShirtProduct = {
   name: string;
   price: string;
@@ -9,33 +11,41 @@ type ShirtProduct = {
   sizes: string[];
   image: string;
 };
-const shirts: ShirtProduct[] = [{
-  name: "NAME",
-  price: "$22-$38",
-  colors: ["WHITE", "BLACK"],
-  sizes: ["S", "M", "L", "XL"],
-  image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
-}, {
-  name: "NAME",
-  price: "$22-$38",
-  colors: ["WHITE", "BLACK"],
-  sizes: ["S", "M", "L", "XL"],
-  image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
-}, {
-  name: "NAME",
-  price: "$22-$38",
-  colors: ["WHITE", "BLACK"],
-  sizes: ["S", "M", "L", "XL"],
-  image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
-}, {
-  name: "NAME",
-  price: "$22-$38",
-  colors: ["WHITE", "BLACK"],
-  sizes: ["S", "M", "L", "XL"],
-  image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
-}];
+
+const shirts: ShirtProduct[] = [
+  {
+    name: "NAME",
+    price: "$22-$38",
+    colors: ["WHITE", "BLACK"],
+    sizes: ["S", "M", "L", "XL"],
+    image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
+  }, 
+  {
+    name: "NAME",
+    price: "$22-$38",
+    colors: ["WHITE", "BLACK"],
+    sizes: ["S", "M", "L", "XL"],
+    image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
+  }, 
+  {
+    name: "NAME",
+    price: "$22-$38",
+    colors: ["WHITE", "BLACK"],
+    sizes: ["S", "M", "L", "XL"],
+    image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
+  }, 
+  {
+    name: "NAME",
+    price: "$22-$38",
+    colors: ["WHITE", "BLACK"],
+    sizes: ["S", "M", "L", "XL"],
+    image: "/lovable-uploads/e866de64-1a88-451f-96c3-53f95478df39.png"
+  }
+];
+
 const ProductShowcase = () => {
-  return <div className="py-10 bg-transparent">
+  return (
+    <div className="py-10 bg-transparent">
       <Container className="mb-6">
         <div className="max-w-3xl">
           <h2 className="md:text-3xl font-serif text-white mb-1 text-xs">
@@ -53,28 +63,34 @@ const ProductShowcase = () => {
           </div>
         </div>
         
-        <div className="flex flex-col items-start gap-5 w-[430px]">
-          <div className="flex overflow-x-auto pb-4 gap-4 no-scrollbar">
-            {shirts.map((shirt, index) => <div key={index} className="neon-border flex-shrink-0 w-[280px] p-4 flex flex-col">
-                <div className="mb-4 flex justify-center">
-                  <div className="w-36 h-40 overflow-hidden">
-                    <img src={shirt.image} alt={shirt.name} className="w-full h-full object-contain" />
+        <div className="w-full">
+          <ScrollArea className="w-full" orientation="horizontal">
+            <div className="flex gap-4 pb-4 min-w-max">
+              {shirts.map((shirt, index) => (
+                <div key={index} className="neon-border flex-shrink-0 w-[280px] p-4 flex flex-col">
+                  <div className="mb-4 flex justify-center">
+                    <div className="w-36 h-40 overflow-hidden">
+                      <img src={shirt.image} alt={shirt.name} className="w-full h-full object-contain" />
+                    </div>
                   </div>
+                  <div className="mb-4">
+                    <div className="text-white font-bold">{shirt.price}</div>
+                    <div className="text-sm text-white/80 uppercase">
+                      {shirt.colors.join(" / ")}
+                    </div>
+                    <div className="text-sm text-white/80 mt-1">
+                      {shirt.sizes.join(" ")}
+                    </div>
+                  </div>
+                  <div className="text-xl text-white font-bold">{shirt.name}</div>
                 </div>
-                <div className="mb-4">
-                  <div className="text-white font-bold">{shirt.price}</div>
-                  <div className="text-sm text-white/80 uppercase">
-                    {shirt.colors.join(" / ")}
-                  </div>
-                  <div className="text-sm text-white/80 mt-1">
-                    {shirt.sizes.join(" ")}
-                  </div>
-                </div>
-                <div className="text-xl text-white font-bold">{shirt.name}</div>
-              </div>)}
-          </div>
+              ))}
+            </div>
+          </ScrollArea>
         </div>
       </Container>
-    </div>;
+    </div>
+  );
 };
+
 export default ProductShowcase;
