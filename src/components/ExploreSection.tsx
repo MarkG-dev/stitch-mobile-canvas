@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Container } from "@/components/ui/container";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 type DesignItem = {
   name: string;
@@ -50,20 +51,19 @@ const ExploreSection = () => {
           </div>
         </div>
         
-        <div className="flex flex-col items-start gap-5 w-full">
-          <div className="flex overflow-x-auto pb-4 gap-4 no-scrollbar">
+        <ScrollArea className="w-full">
+          <div className="flex gap-4 pb-4 w-max">
             {designs.map((design, index) => (
-              <div key={index} className="neon-border flex-shrink-0 w-[240px] p-4 flex flex-col">
-                <div className="mb-4 flex justify-center">
-                  <div className="w-36 h-40 overflow-hidden">
-                    <img src={design.image} alt={design.name} className="w-full h-full object-contain" />
-                  </div>
-                </div>
-                <div className="text-xl text-white font-bold text-center">{design.name}</div>
+              <div key={index} className="neon-border w-[240px] p-4 flex-shrink-0">
+                <img 
+                  src={design.image} 
+                  alt={design.name} 
+                  className="h-56 w-full object-contain" 
+                />
               </div>
             ))}
           </div>
-        </div>
+        </ScrollArea>
       </Container>
     </div>
   );
