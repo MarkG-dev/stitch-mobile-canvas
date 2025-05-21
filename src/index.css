@@ -73,4 +73,12 @@
   .step-label {
     @apply text-xl uppercase text-neon font-bold;
   }
+  
+  .designer-canvas-container {
+    @apply flex items-center justify-center p-4;
+  }
+  
+  .panel-slide-up {
+    @apply transform transition-transform duration-300 ease-out;
+  }
 }

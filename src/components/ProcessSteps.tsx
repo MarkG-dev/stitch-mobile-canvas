@@ -1,26 +1,38 @@
 
 import React from "react";
 import { Container } from "@/components/ui/container";
+import { Link } from "react-router-dom";
 
 const steps = [
-  { number: "1", label: "UPLOAD" },
-  { number: "2", label: "DESIGNER" },
-  { number: "3", label: "STUDIO" }
+  { number: "1", label: "UPLOAD", path: "/" },
+  { number: "2", label: "DESIGNER", path: "/designer" },
+  { number: "3", label: "STUDIO", path: "/studio" }
 ];
 
-const ProcessSteps = () => {
+interface ProcessStepsProps {
+  active?: number;
+}
+
+const ProcessSteps: React.FC<ProcessStepsProps> = ({ active = 0 }) => {
   return (
     <div className="mb-6">
       <Container>
         <div className="flex justify-between gap-2">
-          {steps.map((step) => (
-            <button 
+          {steps.map((step, index) => (
+            <Link 
               key={step.number}
-              className="neon-border flex-1 py-2 text-center"
+              to={step.path}
+              className={`neon-border flex-1 py-2 text-center ${
+                active === index ? "bg-neon/20" : ""
+              }`}
             >
-              <div className="text-neon text-lg">{step.number}</div>
-              <div className="text-neon text-xs mt-1">{step.label}</div>
-            </button>
+              <div className={`${active === index ? "text-black" : "text-neon"} text-lg`}>
+                {step.number}
+              </div>
+              <div className={`${active === index ? "text-black" : "text-neon"} text-xs mt-1`}>
+                {step.label}
+              </div>
+            </Link>
           ))}
         </div>
       </Container>
