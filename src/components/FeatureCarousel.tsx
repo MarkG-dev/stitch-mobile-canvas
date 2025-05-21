@@ -1,9 +1,11 @@
+
 import React from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 import { Circle, CircleDot } from "lucide-react";
+
 const features = [{
   title: "Custom Designs",
   description: "Create unique, personalized t-shirt designs with our easy-to-use tools.",
@@ -21,46 +23,51 @@ const features = [{
   description: "Not happy with your order? We'll make it right, guaranteed.",
   image: "/lovable-uploads/2c91bf7d-be12-4aca-bdef-d016cba04c77.png"
 }];
+
 const FeatureCarousel = () => {
   const isMobile = useIsMobile();
   const [api, setApi] = React.useState<any>(null);
   const [current, setCurrent] = React.useState(0);
+  
   const scrollTo = React.useCallback((index: number) => {
     api?.scrollTo(index);
   }, [api]);
+  
   React.useEffect(() => {
     if (!api) return;
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap());
     });
   }, [api]);
-  return <div className="py-12">
+  
+  return (
+    <div className="py-12">
       <Container className="relative">
         <h2 className="text-3xl font-serif text-neon text-center mb-8">Features</h2>
         
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="flex flex-col items-center md:items-start gap-2 md:gap-4 mb-4 md:mb-0 justify-center md:justify-start">
-            {features.map((_, index) => <button key={index} onClick={() => scrollTo(index)} className="focus:outline-none" aria-label={`Go to slide ${index + 1}`}>
-                {current === index ? <CircleDot className="w-4 h-4 text-neon" /> : <Circle className="w-4 h-4 text-neon/50 hover:text-neon/70 transition-colors" />}
-              </button>)}
-          </div>
-          
+        <div className="relative">
           <Carousel setApi={setApi} className="w-full" opts={{
-          align: "start",
-          loop: true
-        }}>
+            align: "start",
+            loop: true
+          }}>
             <CarouselContent>
-              {features.map((feature, index) => <CarouselItem key={index} className="md:basis-full">
-                  <div className={cn("neon-border p-6 h-full", current === index ? "bg-neon/5" : "")}>
-                    <div className="flex flex-col items-center">
-                      <div className="w-full mb-4 aspect-[4/3] relative overflow-hidden">
-                        <img src={feature.image} alt={feature.title} className="w-full h-full object-cover rounded" />
+              {features.map((feature, index) => (
+                <CarouselItem key={index} className="md:basis-full">
+                  <div className={cn("relative neon-border overflow-hidden", current === index ? "bg-neon/5" : "")}>
+                    <div className="relative aspect-[16/9] w-full">
+                      <img 
+                        src={feature.image} 
+                        alt={feature.title} 
+                        className="absolute inset-0 w-full h-full object-cover" 
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4">
+                        <h3 className="text-xl font-bold text-neon">{feature.title}</h3>
+                        <p className="text-sm text-white/80">{feature.description}</p>
                       </div>
-                      
-                      
                     </div>
                   </div>
-                </CarouselItem>)}
+                </CarouselItem>
+              ))}
             </CarouselContent>
             
             <div className="hidden md:flex justify-end gap-2 mt-4">
@@ -68,8 +75,28 @@ const FeatureCarousel = () => {
               <CarouselNext className="relative static right-auto transform-none" />
             </div>
           </Carousel>
+          
+          {/* Navigation dots positioned on top of the carousel */}
+          <div className="absolute left-6 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-2">
+            {features.map((_, index) => (
+              <button 
+                key={index} 
+                onClick={() => scrollTo(index)} 
+                className="focus:outline-none" 
+                aria-label={`Go to slide ${index + 1}`}
+              >
+                {current === index ? (
+                  <CircleDot className="w-5 h-5 text-neon" />
+                ) : (
+                  <Circle className="w-5 h-5 text-neon/50 hover:text-neon/70 transition-colors" />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
       </Container>
-    </div>;
+    </div>
+  );
 };
+
 export default FeatureCarousel;
