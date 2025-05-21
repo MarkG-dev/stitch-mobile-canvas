@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import TshirtDisplay from "@/components/TshirtDisplay";
 import ProcessSteps from "@/components/ProcessSteps";
+import FeatureCarousel from "@/components/FeatureCarousel";
 import { Container } from "@/components/ui/container";
 
 const Index = () => {
@@ -24,6 +25,7 @@ const Index = () => {
       </main>
       
       <ProcessSteps />
+      <FeatureCarousel />
     </div>
   );
 };
