@@ -37,17 +37,15 @@ const ProductShowcase = () => {
   return <div className="py-10 bg-transparent">
       <Container className="mb-6">
         <div className="max-w-3xl">
-          <h2 className="text-2xl md:text-3xl font-serif text-white mb-1">
+          <h2 className="md:text-3xl font-serif text-white mb-1 text-xs">
             THE TEES THE BIG BRANDS USE
           </h2>
-          <h3 className="text-xl md:text-2xl font-serif text-white mb-4">
-            (BUT BUILT FOR YOU)
-          </h3>
+          
         </div>
         
         <div className="flex justify-between items-center mb-6">
           <div className="flex-1"></div>
-          <div className="neon-border px-6 py-2">
+          <div className="neon-border px-4 py-1 uppercase text-xs tracking-wide">
             <span className="text-neon font-bold">PRODUCT</span>
           </div>
         </div>
